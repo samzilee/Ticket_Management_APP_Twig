@@ -16,7 +16,6 @@
           Home
         </button>
       </form>
-      {% if session %}
       <form method="get" action="/" style="display: inline">
         <button
           name="page"
@@ -37,18 +36,6 @@
           Tickets
         </button>
       </form>
-      {% else %}
-      <form method="get" action="/" style="display: inline">
-        <button
-          name="page"
-          value="login"
-          type="submit"
-          class="{% if page == 'login' or page == 'signup' %}active{% endif %}"
-        >
-          Login
-        </button>
-      </form>
-      {% endif %}
     </div>
   </div>
 </nav>
