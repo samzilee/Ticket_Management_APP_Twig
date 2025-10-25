@@ -1,0 +1,41 @@
+{% extends 'base.twig' %} {% block title %}Sign Up - TicketFlow{% endblock %} {%
+block content %}
+<div class="auth-root">
+  <form class="auth-form" method="post" action="?page=signup">
+    <h2>Sign Up</h2>
+    <label for="email">Email</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      autocomplete="username"
+      required
+      value="{{ email|default('') }}"
+    />
+    <label for="password">Password</label>
+    <input
+      id="password"
+      name="password"
+      type="password"
+      autocomplete="new-password"
+      required
+    />
+    <label for="confirm">Confirm Password</label>
+    <input
+      id="confirm"
+      name="confirm"
+      type="password"
+      autocomplete="new-password"
+      required
+    />
+    {% if error %}
+    <div class="auth-error" role="alert">{{ error }}</div>
+    {% endif %}
+    <button class="auth-btn" type="submit">Sign Up</button>
+    <div class="auth-alt">
+      <span>Already have an account?</span>
+      <a class="auth-link" href="?page=login">Login</a>
+    </div>
+  </form>
+</div>
+{% endblock %}

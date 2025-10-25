@@ -1,0 +1,18 @@
+<form class="ticket-form" method="post" action="?page=tickets&action={{ form_action|default('create') }}">
+  <h2>{{ ticket ? 'Edit Ticket' : 'New Ticket' }}</h2>
+  <label for="title">Title</label>
+  <input id="title" name="title" value="{{ ticket.title|default('') }}" />
+  <label for="status">Status</label>
+  <select id="status" name="status" required>
+    <option value="open" {% if ticket.status == 'open' %}selected{% endif %}>Open</option>
+    <option value="in_progress" {% if ticket.status == 'in_progress' %}selected{% endif %}>In Progress</option>
+    <option value="closed" {% if ticket.status == 'closed' %}selected{% endif %}>Closed</option>
+  </select>
+  <label for="desc">Description</label>
+  <textarea id="desc" name="description" rows="3">{{ ticket.description|default('') }}</textarea>
+  {% if error %}<div class="form-error" role="alert">{{ error }}</div>{% endif %}
+  <div class="form-actions">
+    <button class="form-save" type="submit">{{ ticket ? 'Update' : 'Create' }}</button>
+    <a class="form-cancel" href="?page=tickets">Cancel</a>
+  </div>
+</form>

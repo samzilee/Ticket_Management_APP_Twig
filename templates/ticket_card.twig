@@ -1,0 +1,29 @@
+<div class="ticket-card status-{{ ticket.status }}">
+  <div class="ticket-card-header">
+    <h3>{{ ticket.title }}</h3>
+    <span
+      class="ticket-status status-{{ ticket.status }}"
+      >{{ ticket.status|replace({'_':' '}) }}</span
+    >
+  </div>
+  {% if ticket.description %}
+  <p class="ticket-desc">{{ ticket.description }}</p>
+  {% endif %}
+  <div class="ticket-card-actions">
+    <form
+      method="post"
+      action="?page=tickets&action=edit&id={{ ticket.id }}"
+      style="display: inline"
+    >
+      <button class="ticket-edit" type="submit">Edit</button>
+    </form>
+    <form
+      method="post"
+      action="?page=tickets&action=delete&id={{ ticket.id }}"
+      style="display: inline"
+      onsubmit="return confirm('Delete this ticket?')"
+    >
+      <button class="ticket-delete" type="submit">Delete</button>
+    </form>
+  </div>
+</div>

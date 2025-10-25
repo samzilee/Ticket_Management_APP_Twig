@@ -1,0 +1,44 @@
+/* Global layout and status color styles */
+
+body {
+  margin: 0;
+  font-family: "Inter", Arial, sans-serif;
+  background: #f8fafc;
+  color: #222;
+}
+
+.main-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.status-open {
+  color: #1a7f37;
+  background: #e6f4ea;
+}
+.status-in_progress {
+  color: #b26a00;
+  background: #fff7e6;
+}
+.status-closed {
+  color: #555;
+  background: #f3f4f6;
+}
+
+.card {
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  background: #fff;
+  padding: 2em;
+  margin-bottom: 2em;
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 0 0.5rem;
+  }
+  .card {
+    padding: 1em;
+  }
+}

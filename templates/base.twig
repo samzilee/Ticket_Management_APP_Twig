@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}TicketFlow{% endblock %}</title>
+    <link rel="stylesheet" href="/assets/styles/global.css" />
+    <link rel="stylesheet" href="/assets/styles/Navbar.css" />
+    <link rel="stylesheet" href="/assets/styles/Footer.css" />
+    <link rel="stylesheet" href="/assets/styles/Auth.css" />
+    <link rel="stylesheet" href="/assets/styles/Dashboard.css" />
+    <link rel="stylesheet" href="/assets/styles/Form.css" />
+    <link rel="stylesheet" href="/assets/styles/Tickets.css" />
+    <link rel="stylesheet" href="/assets/styles/TicketCard.css" />
+    <link rel="stylesheet" href="/assets/styles/Toast.css" />
+    <link rel="stylesheet" href="/assets/styles/Landing.css" />
+  </head>
+  <body>
+    {% include 'navbar.twig' %}
+    <main class="main-container">{% block content %}{% endblock %}</main>
+    {% include 'footer.twig' %}
+  </body>
+</html>

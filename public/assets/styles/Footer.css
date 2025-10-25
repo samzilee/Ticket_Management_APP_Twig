@@ -1,0 +1,12 @@
+/* Footer styles */
+
+.footer-root {
+  width: 100%;
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: #888;
+  font-size: 1rem;
+  background: #fff;
+  margin-top: auto;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.03);
+}

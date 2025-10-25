@@ -1,0 +1,10 @@
+<div class="toast {{ type|default('success') }}" role="status">
+  {{ message }}
+  <button
+    class="toast-close"
+    onclick="this.parentElement.style.display='none'"
+    aria-label="Close notification"
+  >
+    ×
+  </button>
+</div>

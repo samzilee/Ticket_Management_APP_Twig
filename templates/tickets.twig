@@ -1,0 +1,23 @@
+{% extends 'base.twig' %} {% block title %}Tickets - TicketFlow{% endblock %} {%
+block content %}
+<div class="tickets-root">
+  <header class="tickets-header">
+    <h1>Ticket Management</h1>
+    <form method="post" action="?page=tickets&action=new" style="margin: 0">
+      <button class="tickets-create-btn" type="submit">+ New Ticket</button>
+    </form>
+  </header>
+  {% if show_form %} {% include 'form.twig' %} {% endif %}
+  <section class="tickets-list">
+    {% if tickets|length == 0 %}
+    <div class="tickets-empty">No tickets yet.</div>
+    {% else %}
+    <div class="grid">
+      {% for ticket in tickets %} {% include 'ticket_card.twig' with { ticket:
+      ticket } %} {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% if toast %} {% include 'toast.twig' with toast %} {% endif %}
+</div>
+{% endblock %}

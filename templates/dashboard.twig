@@ -1,0 +1,31 @@
+{% extends 'base.twig' %} {% block title %}Dashboard - TicketFlow{% endblock %}
+{% block content %}
+<div class="dashboard-root">
+  <header class="dashboard-header">
+    <h1>Dashboard</h1>
+    <form method="post" action="?page=logout" style="margin: 0">
+      <button class="dashboard-logout" type="submit">Logout</button>
+    </form>
+  </header>
+  <section class="dashboard-cards">
+    <div class="dashboard-card">
+      <span class="dashboard-label">Total Tickets</span>
+      <span class="dashboard-value">{{ total }}</span>
+    </div>
+    <div class="dashboard-card status-open">
+      <span class="dashboard-label">Open Tickets</span>
+      <span class="dashboard-value">{{ open }}</span>
+    </div>
+    <div class="dashboard-card status-closed">
+      <span class="dashboard-label">Resolved Tickets</span>
+      <span class="dashboard-value">{{ closed }}</span>
+    </div>
+  </section>
+  <nav class="dashboard-nav">
+    <a class="dashboard-nav-btn" href="?page=tickets"
+      >Go to Ticket Management</a
+    >
+  </nav>
+  {% if toast %} {% include 'toast.twig' with toast %} {% endif %}
+</div>
+{% endblock %}
