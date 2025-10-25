@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: ticket-management
-    env: php
-    branch: main
-    buildCommand: composer install --no-dev --prefer-dist --optimize-autoloader
-    startCommand: php -S 0.0.0.0:10000 -t public
-    rootDir: .
-    plan: free
